@@ -17,8 +17,8 @@ import browserSync from "browser-sync";
 var sassSrc = 'source/sass/**/*.sass',
     styleDest = 'build/assets/css/',
 
-    pugSrc = 'source/pugTemp/*.pug',
-    pugIncSrc = 'source/pugTemp/**/*.pug',
+    pugSrc = 'source/pug/*.pug',
+    pugIncSrc = 'source/pug/**/*.pug',
     htmlDest = 'build/',
 
     // * images
@@ -40,11 +40,6 @@ gulp.task('pug', function () {
         .pipe(gulp.dest(htmlDest))
 });
 
-// move HTML files from source to build
-gulp.task('html', function () {
-    return gulp.src(htmlSrc)
-        .pipe(gulp.dest(htmlDest))
-});
 
 // Compiles all SASS files
 gulp.task('sass', function (done) {
@@ -130,4 +125,4 @@ gulp.task('watch' ,function(done) {
 });
 
 // use default task to launch Browsersync and watch JS files
-gulp.task('default',gulp.parallel('sass', 'scripts', 'vendors', 'watch', 'pug', 'html'), function () {});
+gulp.task('default',gulp.parallel('sass', 'scripts', 'vendors', 'watch', 'pug'), function () {});
