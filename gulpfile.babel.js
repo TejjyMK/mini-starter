@@ -108,7 +108,6 @@ gulp.task('watch' ,function(done) {
     });
 
     gulp.watch([pugIncSrc, pugSrc],gulp.parallel(['pug']));
-    gulp.watch(htmlSrc,gulp.parallel(['html']));
     gulp.watch(sassSrc,gulp.parallel(['sass']));
     gulp.watch(scriptSrc,gulp.parallel(['scripts']));
     gulp.watch(vendorSrc,gulp.parallel(['vendors']));
