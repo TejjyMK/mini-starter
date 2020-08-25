@@ -1,0 +1,21 @@
+@use 'variables' as *
+
+=font($fsize,$fweight,$color,$lh: 1.5)
+    font:
+        family:$font // this should be changed to the name of font variable
+        size: $fsize
+        weight: $fweight
+
+    color: $color
+    line-height: $lh
+
+=box-shadow($color,$blur, $ho:0, $vo:0, $spread:0)
+    box-shadow: $ho $vo $blur $spread $color
+
+=button($color ,$background-color ,$bord,$padding: .5rem 1rem )
+    display: inline-block
+    text-decoration: none
+    padding: $padding
+    color: $color
+    background: $background-color
+    border: $bord
