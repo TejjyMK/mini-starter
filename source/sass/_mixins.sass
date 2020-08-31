@@ -1,21 +1,50 @@
 @use 'variables' as *
 
-=font($fsize,$fweight,$color,$lh: 1.5)
+=font($fsize,$fweight,$color,$line-height: 1.5)
     font:
-        family:$font // this should be changed to the name of font variable
+        family: "Proxima Nova"
         size: $fsize
         weight: $fweight
 
     color: $color
-    line-height: $lh
+    line-height: $line-height
+
+    @if $line-height == normal
+        line-height: normal
+
+    @else
+        line-height: $line-height / $fsize
 
 =box-shadow($color,$blur, $ho:0, $vo:0, $spread:0)
     box-shadow: $ho $vo $blur $spread $color
 
-=button($color ,$background-color ,$bord,$padding: .5rem 1rem )
+=button($color ,$background-color ,$bord,$padding: 1rem 2rem )
     display: inline-block
     text-decoration: none
     padding: $padding
     color: $color
     background: $background-color
     border: $bord
+
+// Flex Related Stuff
+
+=flex-column
+    display: flex
+    flex-direction: column
+
+=flex-center
+    display: flex
+    align-items: center
+    justify-content: center
+
+=flex-center-column
+    +flex-center
+    flex-direction: column
+
+=flex-center-vert
+    display: flex
+    align-items: center
+
+=flex-center-horiz
+    display: flex
+    justify-content: center
