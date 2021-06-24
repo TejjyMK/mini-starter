@@ -48,3 +48,26 @@
 =flex-center-horiz
     display: flex
     justify-content: center
+
+// Media Queries
+
+=for-size($size)
+    @if $size == phone-only
+        @media only screen and (max-width: 599px)
+            @content
+
+    @else if $size == tablet-portrait-up
+        @media only screen and (min-width: 600px)
+            @content
+
+    @else if $size == tablet-landscape-up
+        @media only screen and (min-width: 900px)
+            @content
+
+    @else if $size == desktop-up
+        @media only screen and (min-width: 1450px)
+            @content
+
+    @else if $size == big-desktop-up
+        @media only screen and (min-width: 1800px)
+            @content
